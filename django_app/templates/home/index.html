@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block styles %}
+  <link rel="stylesheet" href={% static 'css/components/hero.css' %}>
+  <link rel="stylesheet" href={% static 'css/components/topic.css' %}>
+  <link rel="stylesheet" href={% static 'css/components/values.css' %}>
+{% endblock %}
+
+{% block content %}
+
+  <section class="hero mb-4">
+    <div class="hero__left bg-dark rounded p-4">
+      <h3 class="hero__up__text">Sem mais sustos com sua caixa de entrada</h3>
+      <h1 class="hero__title mb-4">Bem-Vindo ao <br><span class="fw-bold"><span class="text-danger">No</span> Scaries</span></h1>
+      <p class="text-light">
+        O <strong>No Scaries</strong> foi desenvolvido para tornar o gerenciamento de e-mails mais eficiente e 
+        inteligente. Utilizando inteligência artificial, o sistema analisa automaticamente cada mensagem 
+        recebida e a classifica em dois estados: <span class="text-success"><strong>Produtivo</strong></span> ou 
+        <span class="text-warning"><strong>Improdutivo</strong></span>. E-mails produtivos são aqueles que exigem uma ação ou resposta específica, como solicitações de suporte,
+        atualizações sobre casos em aberto ou dúvidas relacionadas ao sistema. Já os e-mails improdutivos são 
+        mensagens que não requerem uma ação imediata, como felicitações ou agradecimentos. Dessa forma, você 
+        consegue priorizar o que realmente demanda sua atenção, mantendo o foco nas tarefas mais importantes 
+        e otimizando sua rotina diária. 
+      </p>
+    </div>
+
+    <div class="hero__right">
+      <img class="hero__img"src="{%static 'img/logo.png'%}" alt="Logo">
+    </div>
+
+  </section>
+
+  <div class="container">
+    <div class="line"></div>
+  </div>
+
+  <section class="topic py-5">
+      <div class="card bg-dark border-0 shadow-sm rounded-4 p-4 mx-auto topic__div">
+        <h3 class="topic__up__text">Funcionamento do Projeto</h3>
+        <h1 class="topic__title mb-4">Automação e Classificação Inteligente de E-mails</h1>
+        <p class="text-light">
+          O sistema faz a limpeza e pré-processamento dos textos dos e-mails e utiliza as APIs do 
+          <span class="topic__color">DeepSeek e Hugging Face</span> para analisar e classificar o conteúdo, identificando 
+          se o e-mail é <span class="text-success"><strong>Produtivo</strong></span> ou <span class="text-warning"><strong>Improdutivo</strong></span>. 
+          Isso agiliza a triagem, aumenta a eficiência e reduz erros humanos.
+        </p>
+
+        <ul class="list-group list-group-flush bg-dark">
+          <li class="list-group-item bg-dark text-light border-0 ps-0 mb-1">
+            <i class="fas fa-broom topic__icon me-2"></i>
+            <strong>Pré-processamento:</strong> Limpa textos e remove ruídos.
+          </li>
+
+          <li class="list-group-item bg-dark text-light border-0 ps-0 mb-1">
+            <i class="fas fa-robot topic__icon me-2"></i>
+            <strong>Análise com IA:</strong> API interpreta o conteúdo do e-mail.
+          </li>
+
+          <li class="list-group-item bg-dark text-light border-0 ps-0 mb-1">
+            <i class="fas fa-tags topic__icon me-2"></i>
+            <strong>Classificação:</strong> IA devolve o nível/categoria do e-mail.
+          </li>
+
+          <li class="list-group-item bg-dark text-light border-0 ps-0">
+            <i class="fas fa-bolt topic__icon me-2"></i>
+            <strong>Automação:</strong> O sistema prioriza e organiza automaticamente.
+          </li>
+        </ul>
+
+        <a href={% url "mailbot:input" %} class="btn btn-success topic__btn mt-3">Experimentar agora!</a>
+
+    </div>
+  </section>
+  
+  <section></section>
+{% endblock %}

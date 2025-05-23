@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sobre{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9 col-xl-8">
+      <div class="bg-dark rounded-4 p-5 shadow-lg">
+        <div class="mb-4 d-flex align-items-center gap-3">
+          <img src="{% static 'img/logo.png' %}" alt="No Scaries" width="60" class="me-2">
+          <h1 class="fw-bold mb-0 display-5"><span class="text-danger">Sobre</span> o No Scaries</h1>
+        </div>
+
+        <p class="fs-5 text-light mb-4">
+          O <span class="fw-semibold text-danger">No Scaries</span> é uma plataforma desenvolvida para automatizar a análise e classificação de e-mails recebidos, utilizando tecnologias avançadas de Processamento de Linguagem Natural (NLP) e Inteligência Artificial (IA).<br>
+          Nosso objetivo é facilitar a triagem, priorização e resposta de e-mails, trazendo mais agilidade e eficiência para empresas e pessoas que recebem grande volume de mensagens diariamente.
+        </p>
+
+        <h4 class="fw-bold mb-2 text-light">Como funciona?</h4>
+        <ul class="fs-5 text-light mb-4" style="opacity: .85;">
+          <li>O usuário pode enviar um e-mail para análise através do <strong>upload de arquivos (.pdf ou .txt)</strong> ou digitando/colando o texto manualmente.</li>
+          <li>O sistema processa o conteúdo do e-mail, remove ruídos e envia o texto para uma IA, que avalia e classifica cada mensagem como <span class="text-success fw-semibold">Produtiva</span> (requer ação ou resposta) ou <span class="text-warning fw-semibold">Improdutiva</span> (mensagens informativas ou sem necessidade de ação imediata).</li>
+          <li>Além da classificação, o No Scaries sugere <strong>respostas automáticas</strong>, otimizando o tempo e a produtividade do usuário.</li>
+          <li>Cada usuário tem acesso ao seu próprio <strong>histórico de e-mails analisados</strong>, mantendo a privacidade e segurança das informações.</li>
+        </ul>
+
+        <h4 class="fw-bold mb-2 text-light">Por que <span class="text-danger">“No Scaries”</span>?</h4>
+        <p class="fs-5 text-light mb-0" style="opacity: .85;">
+          Nossa missão é acabar com o medo de perder e-mails importantes ou de se perder em meio ao excesso de mensagens.
+          Deixe o trabalho repetitivo para a IA — e dedique seu tempo ao que realmente importa!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

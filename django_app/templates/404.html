@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Página Não Encontrada | 404{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column align-items-center justify-content-center py-5" style="min-height: 80vh;">
+    <img src="{% static 'img/logo404.png' %}" alt="404 - Logo" class="mb-4" style="max-width: 200px; filter: drop-shadow(0 0 16px #ff4444);">
+    <h1 class="display-3 fw-bold text-danger mb-3">404</h1>
+    <h2 class="mb-3 text-light">Página não encontrada</h2>
+    <p class="text-muted mb-4 fs-5">
+        Ops! A página que você tentou acessar não existe.<br>
+        Que tal voltar para o início?
+    </p>
+    <a href="{% url 'home:home' %}" class="btn btn-danger btn-lg px-4">
+        Voltar para o início
+    </a>
+</div>
+{% endblock %}

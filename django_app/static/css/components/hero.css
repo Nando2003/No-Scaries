@@ -1,0 +1,40 @@
+.hero{
+    display: flex;
+    padding-top: 6rem;
+    max-width: 1500px;
+    margin-inline: auto;
+    padding-inline: 15rem;
+    padding-bottom: 2em;
+}
+
+.hero__left{
+    flex: 1;
+}
+
+.hero__right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.hero__img{
+    max-width: 425px;
+    
+}
+
+.hero__up__text{
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: #8c8c73;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hero__title{
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+}
+

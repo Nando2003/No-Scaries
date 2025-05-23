@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Detalhes do E-mail{% endblock %}
+
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10 col-xl-9">
+      <div class="card bg-dark shadow-lg rounded-4 border-0 p-4">
+        <div class="card-body">
+
+          <h1 class="mb-4 fw-bold display-5"><span class="text-danger">Detalhes</span> do E-mail</h1>
+
+          <div class="d-flex align-items-center mb-4 gap-3">
+            <span class="fs-5 fw-semibold text-light-50">Classificação:</span>
+            {% if object.content_type == 'productive' %}
+              <span class="badge bg-success fs-6 px-3 py-2">Produtivo</span>
+            {% else %}
+              <span class="badge bg-warning fs-6 px-3 py-2">Improdutivo</span>
+            {% endif %}
+            <span class="ms-auto small text-muted">{{ object.created_at|date:"d/m/Y H:i" }}</span>
+          </div>
+
+          <hr class="bg-secondary opacity-25 my-3">
+
+          <div class="mb-4">
+            <h5 class="fw-bold mb-2" style="color: #e6e6e6;">Conteúdo do E-mail:</h5>
+            <div style="background: #18191a; border: 1px solid #292929;" class="rounded-3 p-3">
+              <pre class="m-0 text-light" style="font-family: 'Fira Mono', monospace; font-size: 1.05rem; white-space: pre-wrap;">{{ object.content }}</pre>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <h5 class="fw-bold m-0" style="color: #e6e6e6;">Sugestão de Resposta:</h5>
+              <button 
+                class="btn btn-outline-info btn-sm ms-3"
+                onclick="copySuggestion()"
+                id="copyButton"
+                style="white-space: nowrap;"
+              >
+                <i class="fa fa-copy me-1"></i> Copiar sugestão
+              </button>
+            </div>
+            <div style="background: #18191a; border: 1px solid #292929;" class="rounded-3 p-3" id="suggestionText">
+              <p class="m-0 text-light" style="font-size: 1.05rem;">{{ object.suggestion }}</p>
+            </div>
+          </div>
+
+          <div class="text-end mt-4">
+            <a href="{% url 'mailbot:list' %}" class="btn btn-outline-light fw-bold px-4">
+              <i class="fa fa-arrow-left me-2"></i>Voltar
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/copySuggestion.js' %}"></script>
+{% endblock %}
