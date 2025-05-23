@@ -17,14 +17,19 @@ O No Scaries é uma plataforma desenvolvida para automatizar a análise e classi
 * Um arquivo `.env` com as variáveis de ambiente necessárias. Exemplo básico:
 
 ```
-DEBUG=1
-SECRET_KEY=sua_chave_secreta_aqui
-DB_NAME=postgres
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_HOST=db
-DB_PORT=5432
-ALLOWED_HOSTS=localhost,127.0.0.1
+DEBUG=0
+ALLOWED_HOSTS=127.0.0.1,localhost
+SECRET_KEY=CHANGE_ME
+# CSRF_TRUSTED_ORIGINS=
+
+DB_ENGINE=django.db.backends.postgresql
+POSTGRES_DB=CHANGE_ME
+POSTGRES_USER=CHANGE_ME
+POSTGRES_PASSWORD=CHANGE_ME
+POSTGRES_HOST=django_psql
+POSTGRES_PORT=5432
+
+HUGGINGFACE_API_KEY=CHANGE_ME
 ```
 
 > **Obs:** Verifique se todas as variáveis de ambiente necessárias para Django, banco de dados e APIs externas estão no seu `.env`.
