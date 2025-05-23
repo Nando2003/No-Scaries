@@ -80,4 +80,7 @@ HUGGINGFACE_API_KEY=CHANGE_ME
 * Não esqueça de configurar corretamente sua variável SECRET\_KEY.
 * O sistema usa NLP/IA para classificação dos e-mails. Configure as variáveis de API/external se necessário.
 
+## Link da aplicação
+* [No Scaries](https://nandico.site/) (em produção)
+
 ---
